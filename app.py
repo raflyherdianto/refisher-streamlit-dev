@@ -233,7 +233,7 @@ def main():
         return FishFreshnessClassifier("model.tflite")
     classifier = load_model()
 
-    main_logo_base64 = _get_image_as_base64('Logo(1).svg')
+    main_logo_base64 = _get_image_as_base64('Logo ReFisher.png')
     sidebar_logo_base64 = _get_image_as_base64('Logo-Name.png')
 
     if "current_page" not in st.session_state:
