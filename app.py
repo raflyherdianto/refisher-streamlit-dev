@@ -47,13 +47,20 @@ st.set_page_config(
 st.markdown("""
 <style>
 
-/* Untuk tampilan website (di atas tablet) */
+/* Untuk tampilan website 
 .st-emotion-cache-nccqt6 img {
     max-width: 17%;
     vertical-align: middle;
 }
 
-/* Untuk tampilan handphone (responsive) */
+.st-emotion-cache-nccqt6 p {
+    word-break: break-word;
+    margin-top: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* Untuk tampilan handphone
 @media (max-width: 768px) { 
     .st-emotion-cache-nccqt6 img {
         max-width: 40%;
