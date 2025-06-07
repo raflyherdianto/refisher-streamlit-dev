@@ -46,6 +46,27 @@ st.set_page_config(
 # Kustomisasi CSS
 st.markdown("""
 <style>
+
+/* Untuk tampilan website (di atas tablet) */
+.st-emotion-cache-nccqt6 img {
+    max-width: 17%;
+    vertical-align: middle;
+}
+
+/* Untuk tampilan handphone (responsive) */
+@media (max-width: 768px) { 
+    .st-emotion-cache-nccqt6 img {
+        max-width: 40%;
+        vertical-align: middle;
+    }
+
+    .st-emotion-cache-nccqt6 p {
+        word-break: break-word;
+        margin-top: 15px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
     .app-logo-container { 
         text-align: center; 
         margin-bottom: -20px; 
