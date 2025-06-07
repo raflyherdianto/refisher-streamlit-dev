@@ -72,7 +72,7 @@ st.markdown("""
         margin-bottom: -20px; 
     }
     .app-logo { 
-        max-width: 100%;
+        max-width: 17%;
         width: auto;
         height: auto;
         display: block;
