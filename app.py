@@ -63,7 +63,20 @@ st.markdown("""
         color: #666; 
         margin-top: 0px; 
         margin-bottom: 3rem; 
+    }   
+    p.app-jargon {
+    margin-top: 15px;
     }
+
+    @media (max-width:768px){
+    img.app-logo {
+    width: 50%;
+    }
+    p.app-jargon {
+    margin-top: 15px;
+    }
+    }
+    
     .sidebar-logo { 
         width: 150px; 
         display: block; 
