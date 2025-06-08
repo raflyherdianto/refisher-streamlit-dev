@@ -49,11 +49,8 @@ st.markdown("""
 
 /* Untuk tampilan website 
 .st-emotion-cache-nccqt6 img {
-    max-width: 17%;
+    width: 17%;
     vertical-align: middle;
-}
-
-.st-emotion-cache-nccqt6 p {
     word-break: break-word;
     margin-top: 15px;
     margin-left: 0px;
