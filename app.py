@@ -51,7 +51,7 @@ st.markdown("""
         margin-bottom: -20px; 
     }
     .app-logo { 
-        width: 17%;
+        width: 22%;
         height: auto;
         display: block;
         margin-left: auto;
