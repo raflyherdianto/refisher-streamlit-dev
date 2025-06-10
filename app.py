@@ -143,7 +143,7 @@ def page_klasifikasi_utama(classifier, logo_base64):
             image, caption = Image.open(uploaded_file), "Gambar yang diunggah"
 
         if image:
-            st.image(image, caption=caption, use_column_width=True)
+            st.image(image, caption=caption, use_container_width=True)
             st.subheader("🎨 Sesuaikan Kualitas Gambar")
             enhance_contrast = st.slider("Kontras", 0.5, 2.0, 1.0, 0.1)
             enhance_brightness = st.slider("Kecerahan", 0.5, 2.0, 1.0, 0.1)
@@ -152,7 +152,7 @@ def page_klasifikasi_utama(classifier, logo_base64):
                 original_image = image.copy()
                 enhanced_image = ImageEnhance.Contrast(original_image).enhance(enhance_contrast)
                 image = ImageEnhance.Brightness(enhanced_image).enhance(enhance_brightness)
-                st.image(image, caption="Gambar setelah peningkatan kualitas", use_column_width=True)
+                st.image(image, caption="Gambar setelah peningkatan kualitas", use_container_width=True)
 
     with col2:
         st.header("🤖 Hasil Analisis Kesegaran Ikan")
