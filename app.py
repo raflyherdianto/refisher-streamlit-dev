@@ -132,7 +132,10 @@ def page_klasifikasi_utama(classifier, logo_base64):
 
         input_method = st.radio("Pilih metode input gambar:", ["Upload File", "Gunakan Kamera"])
 
-        image, caption = None, ""
+        uploaded_file = None
+        camera_image = None
+        image = None
+        caption = ""
 
         if input_method == "Upload File":
             uploaded_file = st.file_uploader("Pilih gambar ikan (.png, .jpg, .jpeg)", type=['png', 'jpg', 'jpeg'])
