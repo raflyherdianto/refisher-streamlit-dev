@@ -129,8 +129,21 @@ def page_klasifikasi_utama(classifier, logo_base64):
     with col1:
         st.header("📤 Unggah Gambar untuk Analisis")
         st.info("💡 Anda juga bisa menemukan contoh gambar di halaman 'Panduan Penggunaan'.")
-        uploaded_file = st.file_uploader("Pilih gambar ikan (.png, .jpg, .jpeg)", type=['png', 'jpg', 'jpeg'])
-        
+        #uploaded_file = st.file_uploader("Pilih gambar ikan (.png, .jpg, .jpeg)", type=['png', 'jpg', 'jpeg'])
+            # Pilihan ambil dari kamera
+        camera_photo = st.camera_input("Atau ambil foto langsung dengan kamera:")
+
+        # Pilihan upload file
+        uploaded_file = st.file_uploader("Atau unggah gambar ikan (.png, .jpg, .jpeg)", type=['png', 'jpg', 'jpeg'])
+
+        if camera_photo is not None:
+            image = Image.open(camera_photo)
+            caption = "Foto dari kamera"    
+
+        elif uploaded_file is not None:
+            image = Image.open(uploaded_file)
+            caption = "Gambar yang diunggah"
+            
         if 'sample_image_path' in st.session_state and st.session_state.sample_image_path:
             try:
                 image = Image.open(st.session_state.sample_image_path)
