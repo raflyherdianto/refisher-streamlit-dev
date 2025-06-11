@@ -111,15 +111,30 @@ st.markdown("""
         margin-top: 30px; 
     }
 
-
-    div.row-widget.stRadio > div {
-        font-size: 18px;
+    .st-c0 {
+        width: 19px;
     }
-
-    div.row-widget.stRadio > div > label {
-        padding: 10px 5px;
-        display: block;
+    
+    .st-bz {
+        height: 19px;
     }
+    
+    .st-bf {
+        width: 7px;
+    }
+    
+    .st-be {
+        height: 7px;
+    }
+    
+    .st-b9 {
+        width: 1.8rem;
+    }
+    
+    .st-b1 {
+        height: 1.8rem;
+    }
+    
 </style>
 """, unsafe_allow_html=True)
 
