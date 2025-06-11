@@ -111,6 +111,22 @@ st.markdown("""
         margin-top: 30px; 
     }
 
+    .st-au.st-av.st-aw.st-ax.st-ay.st-az.st-b0.st-ae.st-b1.st-b2.st-b3.st-b4.st-b5.st-b6.st-b7.st-b8.st-b9.st-ba.st-bb.st-bc {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    
+    .st-au.st-bx.st-aw.st-ax.st-ay.st-az.st-b0.st-ae.st-b1.st-b2.st-b3.st-b4.st-b5.st-b6.st-b7.st-b8.st-b9.st-ba.st-bb.st-bc {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    
+    .st-cm.st-aw.st-ax.st-ay.st-az.st-bz.st-bb.st-bc.st-c0 {
+        width: 60%
+    17.2656px
+    ;
+        height: 60%;
+    }
   
     
 </style>
