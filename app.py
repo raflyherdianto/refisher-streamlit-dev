@@ -130,18 +130,20 @@ def page_klasifikasi_utama(classifier, logo_base64):
         st.header("📤 Unggah Gambar untuk Analisis")
         st.info("💡 Anda juga bisa menemukan contoh gambar di halaman 'Panduan Penggunaan'.")
 
-        camera_photo = st.camera_input("Ambil foto langsung dengan kamera:")
+        input_method = st.radio("Pilih metode input gambar:", ["Upload File", "Gunakan Kamera"])
 
-        # Pilihan upload file
-        uploaded_file = st.file_uploader("Atau unggah gambar ikan (.png, .jpg, .jpeg)", type=['png', 'jpg', 'jpeg'])
+        image, caption = None, ""
 
-        if camera_photo is not None:
-            image = Image.open(camera_photo)
-            caption = "Foto dari kamera"    
+        if input_method == "Upload File":
+            uploaded_file = st.file_uploader("Pilih gambar ikan (.png, .jpg, .jpeg)", type=['png', 'jpg', 'jpeg'])
+            if uploaded_file:
+                image, caption = Image.open(uploaded_file), "Gambar yang diunggah"
 
-        elif uploaded_file is not None:
-            image = Image.open(uploaded_file)
-            caption = "Gambar yang diunggah"
+        elif input_method == "Gunakan Kamera":
+            camera_image = st.camera_input("Ambil gambar dengan kamera")
+            if camera_image:
+                image, caption = Image.open(camera_image), "Gambar dari kamera"
+
             
         if 'sample_image_path' in st.session_state and st.session_state.sample_image_path:
             try:
