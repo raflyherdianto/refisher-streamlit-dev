@@ -122,9 +122,7 @@ st.markdown("""
     }
     
     .st-cm.st-aw.st-ax.st-ay.st-az.st-bz.st-bb.st-bc.st-c0 {
-        width: 60%
-    17.2656px
-    ;
+        width: 60%;    ;
         height: 60%;
     }
   
