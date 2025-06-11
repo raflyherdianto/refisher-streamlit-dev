@@ -110,6 +110,16 @@ st.markdown("""
         color: grey; 
         margin-top: 30px; 
     }
+
+
+    div.row-widget.stRadio > div {
+        font-size: 18px;
+    }
+
+    div.row-widget.stRadio > div > label {
+        padding: 10px 5px;
+        display: block;
+    }
 </style>
 """, unsafe_allow_html=True)
 
