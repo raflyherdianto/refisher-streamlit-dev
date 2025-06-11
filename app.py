@@ -111,29 +111,7 @@ st.markdown("""
         margin-top: 30px; 
     }
 
-    .st-c0 {
-        width: 19px;
-    }
-    
-    .st-bz {
-        height: 19px;
-    }
-    
-    .st-bf {
-        width: 7px;
-    }
-    
-    .st-be {
-        height: 7px;
-    }
-    
-    .st-b9 {
-        width: 1.8rem;
-    }
-    
-    .st-b1 {
-        height: 1.8rem;
-    }
+  
     
 </style>
 """, unsafe_allow_html=True)
