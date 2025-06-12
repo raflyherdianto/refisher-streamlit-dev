@@ -110,6 +110,23 @@ st.markdown("""
         color: grey; 
         margin-top: 30px; 
     }
+
+    .st-au.st-av.st-aw.st-ax.st-ay.st-az.st-b0.st-ae.st-b1.st-b2.st-b3.st-b4.st-b5.st-b6.st-b7.st-b8.st-b9.st-ba.st-bb.st-bc {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    
+    .st-au.st-bx.st-aw.st-ax.st-ay.st-az.st-b0.st-ae.st-b1.st-b2.st-b3.st-b4.st-b5.st-b6.st-b7.st-b8.st-b9.st-ba.st-bb.st-bc {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    
+    .st-cm.st-aw.st-ax.st-ay.st-az.st-bz.st-bb.st-bc.st-c0 {
+        width: 60%;    ;
+        height: 60%;
+    }
+  
+    
 </style>
 """, unsafe_allow_html=True)
 
@@ -129,8 +146,25 @@ def page_klasifikasi_utama(classifier, logo_base64):
     with col1:
         st.header("📤 Unggah Gambar untuk Analisis")
         st.info("💡 Anda juga bisa menemukan contoh gambar di halaman 'Panduan Penggunaan'.")
-        uploaded_file = st.file_uploader("Pilih gambar ikan (.png, .jpg, .jpeg)", type=['png', 'jpg', 'jpeg'])
-        
+
+        input_method = st.radio("Pilih metode input gambar:", ["Upload File", "Gunakan Kamera"])
+
+        uploaded_file = None
+        camera_image = None
+        image = None
+        caption = ""
+
+        if input_method == "Upload File":
+            uploaded_file = st.file_uploader("Pilih gambar ikan (.png, .jpg, .jpeg)", type=['png', 'jpg', 'jpeg'])
+            if uploaded_file:
+                image, caption = Image.open(uploaded_file), "Gambar yang diunggah"
+
+        elif input_method == "Gunakan Kamera":
+            camera_image = st.camera_input("Ambil gambar dengan kamera")
+            if camera_image:
+                image, caption = Image.open(camera_image), "Gambar dari kamera"
+
+            
         if 'sample_image_path' in st.session_state and st.session_state.sample_image_path:
             try:
                 image = Image.open(st.session_state.sample_image_path)
@@ -143,7 +177,7 @@ def page_klasifikasi_utama(classifier, logo_base64):
             image, caption = Image.open(uploaded_file), "Gambar yang diunggah"
 
         if image:
-            st.image(image, caption=caption, use_column_width=True)
+            st.image(image, caption=caption, use_container_width=True)
             st.subheader("🎨 Sesuaikan Kualitas Gambar")
             enhance_contrast = st.slider("Kontras", 0.5, 2.0, 1.0, 0.1)
             enhance_brightness = st.slider("Kecerahan", 0.5, 2.0, 1.0, 0.1)
@@ -152,7 +186,7 @@ def page_klasifikasi_utama(classifier, logo_base64):
                 original_image = image.copy()
                 enhanced_image = ImageEnhance.Contrast(original_image).enhance(enhance_contrast)
                 image = ImageEnhance.Brightness(enhanced_image).enhance(enhance_brightness)
-                st.image(image, caption="Gambar setelah peningkatan kualitas", use_column_width=True)
+                st.image(image, caption="Gambar setelah peningkatan kualitas", use_container_width=True)
 
     with col2:
         st.header("🤖 Hasil Analisis Kesegaran Ikan")
